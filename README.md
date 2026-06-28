@@ -40,14 +40,8 @@ Instead of manually inspecting packets, this CLI tool automates the process and 
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/pcap-analyzer.git
-cd pcap-analyzer
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
+git clone https://github.com/PAVANRAMI001/Network-Packet-Analyzer-.git
+cd Network-Packet-Analyzer-
 ```
 
 ---
@@ -63,15 +57,73 @@ python analyze mydata.pcap
 ### Example Output
 
 ```
-Analyzing mydata.pcap...
+  PCAP / PCAPng Analyzer  —  Website & Network Inspector  v2.0
+══════════════════════════════════════════════════════════════════════════
+  File   : o1.pcap  (27.3 MB)
+  Format : PCAP (classic)
+══════════════════════════════════════════════════════════════════════════
 
-Total Packets: 1200
-Unique IPs: 45
+┌─ CAPTURE SUMMARY ─────────────────────────────────────────────────────
+│  Duration          : 346.147 s
+│  First packet      : 2026-06-28 06:56:08 UTC
+│  Last packet       : 2026-06-28 07:01:54 UTC
+│  Total packets     : 31,338
+│  Total data        : 26.9 MB
+│  Connections       : 647
+│  External IPs      : 32
+│  HTTP hosts seen   : 8
+│  HTTPS/TLS SNIs    : 12
+│  DNS domains       : 26
+└────────────────────────────────────────────────────────────────────────
+┌─ WEBSITES VISITED  [29 found] ────────────────────────────────────────
+┌─ TRAFFIC CATEGORIES ──────────────────────────────────────────────────
+│  Unknown                          15 sites  ████████████
+│  Software / Cloud                  3 sites  ██
+│  URL Shortener                     2 sites  █
+│  Dev / Code Hosting                2 sites  █
+│  Messaging                         2 sites  █
+│  OS / Software                     1 sites  █
+│  Productivity                      1 sites  █
+│  Dev Tools                         1 sites  █
+│  Email / Cloud                     1 sites  █
+│  Search / Productivity             1 sites  █
+└────────────────────────────────────────────────────────────────────────
+─ HTTP REQUESTS  [showing 25 of 27] ───────────────────────────────────
+│  2026-06-28 06:56:10 UTC  GET  http://c.pki.goog/r/r1.crl
+│           client: ChromeOS
+┌─ DNS QUERIES  [top 26] ───────────────────────────────────────────────
+│     40x  mobile.events.data.microsoft.com                    [Microsoft]  → mobile.events.data.trafficmanager.net
+┌─ TLS / HTTPS DETAILS ─────────────────────────────────────────────────
+│  TLS Versions observed:
+│    TLS 1.2    145 handshakes
+│    TLS 1.0     90 handshakes
+┌─ PROTOCOL DISTRIBUTION ───────────────────────────────────────────────
+│  TCP          19,051  ███████████████     60.9%
+│  UDP          12,150  ██████████          38.8%
+│  ICMPv6           64  █                   0.2%
+│  0                 9  █                   0.0%
+│  2                 9  █                   0.0%
+└────────────────────────────────────────────────────────────────────────
 
-Protocols:
-TCP: 800
-UDP: 300
-ICMP: 100
+┌─ TOP PORTS  [top 15] ─────────────────────────────────────────────────
+│    443  HTTPS                29,597 packets
+│     80  HTTP                  1,278 packets
+│     53  DNS                     235 packets
+│   5228  GCM/FCM                  33 packets
+│   5222                           29 packets
+│   5353                           14 packets
+│    546                            8 packets
+│   5355                            4 packets
+│     67  DHCP-server               2 packets
+│    138                            1 packets
+└────────────────────────────────────────────────────────────────────────
+
+┌─ TOP EXTERNAL IPs  [top 20] ──────────────────────────────────────────
+┌─ CLIENT FINGERPRINTS  (User-Agents) ──────────────────────────────────
+│     15x  ChromeOS
+│           Microsoft BITS/7.8
+│      8x  ChromeOS
+│           Microsoft-CryptoAPI/10.0
 ```
 
 ---
